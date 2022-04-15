@@ -1,7 +1,7 @@
 import random
 
 
-class My_2048_Game:
+class My2048Game:
     def __init__(self):
         self.lose = False
         self.win = False
@@ -95,5 +95,5 @@ class My_2048_Game:
         pass
 
 
-game = My_2048_Game()
+game = My2048Game()
 game.starte_spiel()
