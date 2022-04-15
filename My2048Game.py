@@ -61,7 +61,6 @@ class My2048Game:
         print(board_format)
 
     def verschiebe(self, index):
-        #for i, value in enumerate(self.board):
         for i in self.board:
             if (self.board[i+index]) == 0:
                 self.board[i+index] = self.board[i]
