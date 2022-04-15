@@ -61,11 +61,12 @@ class My2048Game:
         print(board_format)
 
     def verschiebe(self, index):
+        #for i, value in enumerate(self.board):
         for i in self.board:
-            if self.board[i+index] == 0:
+            if (self.board[i+index]) == 0:
                 self.board[i+index] = self.board[i]
                 self.board[i] = 0
-            elif self.board[i+index] == self.board[i]:
+            elif (self.board[i+index]) == (self.board[i]):
                 self.aktualisiere_score(self.board[i], self.board[i+index])
                 self.board[i+index] = self.board[i+index] + self.board[i]
                 self.board[i] = 0
@@ -81,7 +82,6 @@ class My2048Game:
     def aktualisiere_score(self, zahl1, zahl2):
         summe_zahlen = sum(zahl1, zahl2)
         self.score = self.score + summe_zahlen
-        pass
 
     def score_ausgeben(self):
         print("Score: {} \n".format(self.score))
@@ -91,8 +91,9 @@ class My2048Game:
         pass
 
     def pruefe_gewonnen(self):
-        ##
-        pass
+        for i in self.board:
+            if i == 2048:
+                self.win = True
 
 
 game = My2048Game()
