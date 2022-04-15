@@ -7,10 +7,10 @@ class My2048Game:
         self.win = False
         self.score = 0
         self.board = [
-            0, 0, 0, 0,
-            0, 0, 0, 0,
-            0, 0, 0, 0,
-            0, 0, 0, 0
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0]
         ]
 
     def starte_spiel(self):
@@ -54,11 +54,10 @@ class My2048Game:
             print("Spielfeld ist voll! Bitte neustarten über Q")
 
     def ausgabe_spielfeld(self):
-        board_format = "\n{} {} {} {}\n{} {} {} {}\n{} {} {} {}\n{} {} {} {}\n".format(
-            self.board[0], self.board[1], self.board[2], self.board[3], self.board[4], self.board[5], self.board[6],
-            self.board[7], self.board[8], self.board[9], self.board[10], self.board[11], self.board[12], self.board[13],
-            self.board[14], self.board[15])
-        print(board_format)
+        for row in self.board:
+            for element in self.board:
+                reihe = str(element) + " "
+            print(reihe)
 
     def verschiebe(self, index):
         for i in self.board:
