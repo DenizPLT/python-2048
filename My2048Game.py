@@ -43,6 +43,7 @@ class My2048Game:
             #freie_stellen = [[0 for x in range(4)] for y in range(4)]
             #for row in freie_stellen:
             #    for element in freie_stellen:
+            #freie_stellen = self.board.index(0)?
 
             freie_stellen = [i for i, x in enumerate(self.board) if x == 0]
             ausgewaehlte_stelle = random.choice(freie_stellen)
