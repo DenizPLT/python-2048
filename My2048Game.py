@@ -1,17 +1,11 @@
 import random
 
-
 class My2048Game:
     def __init__(self):
         self.lose = False
         self.win = False
         self.score = 0
-        self.board = [
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0]
-        ]
+        self.board = [[0 for x in range(4)] for y in range(4)]
 
     def starte_spiel(self):
         self.generiere_zahl()
@@ -46,6 +40,10 @@ class My2048Game:
 
     def generiere_zahl(self):
         try:
+            #freie_stellen = [[0 for x in range(4)] for y in range(4)]
+            #for row in freie_stellen:
+            #    for element in freie_stellen:
+
             freie_stellen = [i for i, x in enumerate(self.board) if x == 0]
             ausgewaehlte_stelle = random.choice(freie_stellen)
             einzusetzende_zahl = random.choice([2, 4])
