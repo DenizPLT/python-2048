@@ -49,7 +49,7 @@ class My2048Game:
 
     def ausgabe_spielfeld(self):
         for row in self.board:
-            for element in self.board:
+            for element in row:
                 reihe = str(element) + " "
             print(reihe)
 
