@@ -84,9 +84,8 @@ class My2048Game:
         pass
 
     def pruefe_gewonnen(self):
-        for i in self.board:
-            if i == 2048:
-                self.win = True
+        ##
+        pass
 
 
 game = My2048Game()
