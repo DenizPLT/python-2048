@@ -40,15 +40,12 @@ class My2048Game:
 
     def generiere_zahl(self):
         try:
-            freie_stellen = []
-            for i in range(4):
-                for j in range(4):
-                    if self.board[i][j] == 0:
-                        freie_stellen.append((i, j))
-            ausgewaehlte_stelle = random.choice(freie_stellen)
-            i=ausgewaehlte_stelle[0]
-            j=ausgewaehlte_stelle[1]
-            self.board[i][j]=random.choice([2, 4])
+            reihe = random.randint(0, 3)
+            spalte = random.randint(0, 3)
+            while(self.board[reihe][spalte] != 0):
+                reihe = random.randint(0, 3)
+                spalte = random.randint(0, 3)
+            self.board[reihe][spalte] = random.choice([2, 4])
         except IndexError:
             print("Spielfeld ist voll! Bitte neustarten über Q")
 
