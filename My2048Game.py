@@ -39,15 +39,13 @@ class My2048Game:
                 print("Inkorrekte Eingabe! Versuche es erneut")
 
     def generiere_zahl(self):
-        try:
             reihe = random.randint(0, 3)
             spalte = random.randint(0, 3)
-            while(self.board[reihe][spalte] != 0):
+            while (self.board[reihe][spalte] != 0):
                 reihe = random.randint(0, 3)
                 spalte = random.randint(0, 3)
-            self.board[reihe][spalte] = random.choice([2, 4])
-        except IndexError:
-            print("Spielfeld ist voll! Bitte neustarten über Q")
+            zahl = random.choice([2, 4])
+            self.board[reihe][spalte] = zahl
 
     def ausgabe_spielfeld(self):
         for row in self.board:
@@ -56,14 +54,15 @@ class My2048Game:
             print(reihe)
 
     def verschiebe(self, index):
-        for i in self.board:
-            if (self.board[i+index]) == 0:
-                self.board[i+index] = self.board[i]
-                self.board[i] = 0
-            elif (self.board[i+index]) == (self.board[i]):
-                self.aktualisiere_score(self.board[i], self.board[i+index])
-                self.board[i+index] = self.board[i+index] + self.board[i]
-                self.board[i] = 0
+        #for i in self.board:
+        #    if (self.board[i+index]) == 0:
+        #        self.board[i+index] = self.board[i]
+        #        self.board[i] = 0
+        #    elif (self.board[i+index]) == (self.board[i]):
+        #        self.aktualisiere_score(self.board[i], self.board[i+index])
+        #        self.board[i+index] = self.board[i+index] + self.board[i]
+        #        self.board[i] = 0
+        pass
 
     def summiere_zahlen_spielzug(self):
         ##
