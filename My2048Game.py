@@ -48,10 +48,10 @@ class My2048Game:
             self.board[reihe][spalte] = zahl
 
     def ausgabe_spielfeld(self):
-        for row in self.board:
-            for element in row:
-                reihe = str(element) + " "
-            print(reihe)
+        for i in range(4):
+            for j in range(4):
+                print(self.board[i][j], end= " ")
+            print("")
 
     def verschiebe(self, index):
         #for i in self.board:
