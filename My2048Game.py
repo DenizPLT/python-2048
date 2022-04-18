@@ -15,7 +15,7 @@ class My2048Game:
             self.pruefe_gewonnen()
             if self.lose == True or self.win == True:
                 print("Spiel vorbei!")
-                self.score_ausgeben
+                self.score_ausgeben()
                 break
             self.generiere_zahl()
             self.ausgabe_spielfeld()
