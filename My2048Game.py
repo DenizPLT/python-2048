@@ -38,7 +38,7 @@ class My2048Game:
     def generiere_zahl(self):
         reihe = random.randint(0, 3)
         spalte = random.randint(0, 3)
-        while (self.board[reihe][spalte] != 0):
+        while self.board[reihe][spalte] != 0:
             reihe = random.randint(0, 3)
             spalte = random.randint(0, 3)
         zahl = random.choice([2, 4])
