@@ -1,5 +1,6 @@
 import random
 
+
 class My2048Game:
     def __init__(self):
         self.lose = False
@@ -24,45 +25,40 @@ class My2048Game:
             if spielzug == 'Q' or spielzug == 'q':
                 break
             elif spielzug == 'L' or spielzug == 'l':
-                index = -1
-                self.verschiebe(index)
+                self.verschiebe("L")
             elif spielzug == 'R' or spielzug == 'r':
-                index = 1
-                self.verschiebe(index)
+                self.verschiebe("R")
             elif spielzug == 'O' or spielzug == 'o':
-                index = -4
-                self.verschiebe(index)
+                self.verschiebe("O")
             elif spielzug == 'U' or spielzug == 'u':
-                index = 4
-                self.verschiebe(index)
+                self.verschiebe("U")
             else:
                 print("Inkorrekte Eingabe! Versuche es erneut")
 
     def generiere_zahl(self):
+        reihe = random.randint(0, 3)
+        spalte = random.randint(0, 3)
+        while (self.board[reihe][spalte] != 0):
             reihe = random.randint(0, 3)
             spalte = random.randint(0, 3)
-            while (self.board[reihe][spalte] != 0):
-                reihe = random.randint(0, 3)
-                spalte = random.randint(0, 3)
-            zahl = random.choice([2, 4])
-            self.board[reihe][spalte] = zahl
+        zahl = random.choice([2, 4])
+        self.board[reihe][spalte] = zahl
 
     def ausgabe_spielfeld(self):
         for i in range(4):
             for j in range(4):
-                print(self.board[i][j], end= " ")
+                print(self.board[i][j], end=" ")
             print("")
 
-    def verschiebe(self, index):
-        #for i in self.board:
-        #    if (self.board[i+index]) == 0:
-        #        self.board[i+index] = self.board[i]
-        #        self.board[i] = 0
-        #    elif (self.board[i+index]) == (self.board[i]):
-        #        self.aktualisiere_score(self.board[i], self.board[i+index])
-        #        self.board[i+index] = self.board[i+index] + self.board[i]
-        #        self.board[i] = 0
-        pass
+    def verschiebe(self, direction):
+        if direction == "L":
+            pass
+        if direction == "R":
+            pass
+        if direction == "O":
+            pass
+        if direction == "U":
+            pass
 
     def summiere_zahlen_spielzug(self):
         ##
