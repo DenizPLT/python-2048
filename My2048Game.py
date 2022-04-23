@@ -46,7 +46,7 @@ class My2048Game:
                 self.verschiebeRunter(3)
             else:
                 print("Inkorrekte Eingabe! Versuche es erneut")
-            if (self.vergleiche_board(self.board, tempBoard) == False):
+            if (self.vergleiche_board(self.board, tempBoard) == False): #prueft ob sich board geaendert hat
                 self.generiere_zahl()
 
     def generiere_zahl(self):
@@ -76,13 +76,13 @@ class My2048Game:
             sucheReihe = reihe - 1
             while (self.board[sucheReihe][spalte] == 0 and sucheReihe > 0):  # sucht von oben nach unten nach nullen
                 sucheReihe = sucheReihe - 1
-            if (sucheReihe == 0 and self.board[sucheReihe][spalte] == 0):  # verschiebt über die nullen
+            if (sucheReihe == 0 and self.board[sucheReihe][spalte] == 0):  # verschiebt ueber die nullen
                 self.board[0][spalte] = self.board[reihe][spalte]
                 self.board[reihe][spalte] = 0
             elif (self.board[sucheReihe][spalte] == self.board[reihe][spalte]):  # zwei gleiche zahlen gefunden
                 self.zusammenfuegen(reihe, spalte, sucheReihe, spalte)
                 self.board[reihe][spalte] = 0
-            elif (reihe > sucheReihe + 1):  # zahl gefunden aber übereinstimmen nicht
+            elif (reihe > sucheReihe + 1):  # zahl gefunden aber uebereinstimmen nicht
                 self.board[sucheReihe + 1][spalte] = self.board[reihe][spalte]
                 self.board[reihe][spalte] = 0
 
@@ -97,7 +97,7 @@ class My2048Game:
             elif (self.board[sucheReihe][spalte] == self.board[reihe][spalte]):
                 self.zusammenfuegen(reihe, spalte, sucheReihe, spalte)
                 self.board[reihe][spalte] = 0
-            elif (reihe < sucheReihe - 1):  # zahl gefunden aber übereinstimmen nicht
+            elif (reihe < sucheReihe - 1):  
                 self.board[sucheReihe - 1][spalte] = self.board[reihe][spalte]
                 self.board[reihe][spalte] = 0
 
@@ -112,7 +112,7 @@ class My2048Game:
             elif (self.board[reihe][sucheSpalte] == self.board[reihe][spalte]):
                 self.zusammenfuegen(reihe, spalte, reihe, sucheSpalte)
                 self.board[reihe][spalte] = 0
-            elif (spalte > sucheSpalte + 1):  # zahl gefunden aber übereinstimmen nicht
+            elif (spalte > sucheSpalte + 1):  
                 self.board[reihe][sucheSpalte + 1] = self.board[reihe][spalte]
                 self.board[reihe][spalte] = 0
 
@@ -127,7 +127,7 @@ class My2048Game:
             elif (self.board[reihe][sucheSpalte] == self.board[reihe][spalte]):
                 self.zusammenfuegen(reihe, spalte, reihe, sucheSpalte)
                 self.board[reihe][spalte] = 0
-            elif (spalte < sucheSpalte - 1):  # zahl gefunden aber übereinstimmen nicht
+            elif (spalte < sucheSpalte - 1):  
                 self.board[reihe][sucheSpalte - 1] = self.board[reihe][spalte]
                 self.board[reihe][spalte] = 0
 
