@@ -73,7 +73,7 @@ class My2048Game:
             sucheReihe = reihe - 1
             while(self.board[sucheReihe][spalte] == 0 and sucheReihe > 0): #sucht von oben nach unten nach nullen
                 sucheReihe = sucheReihe - 1
-            if (sucheReihe == 0 and self.board[sucheReihe][spalte] == 0): #verschiebt nullen
+            if (sucheReihe == 0 and self.board[sucheReihe][spalte] == 0): #verschiebt über die nullen
                 self.board[0][spalte] = self.board[reihe][spalte]
                 self.board[reihe][spalte] = 0
             elif(self.board[sucheReihe][spalte] == self.board[reihe][spalte]): #zwei gleiche zahlen gefunden
