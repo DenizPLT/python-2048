@@ -4,7 +4,6 @@ import random
 class My2048Game:
     def __init__(self):
         self.lose = False
-        self.win = False
         self.score = 0
         self.board = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 
@@ -131,6 +130,7 @@ class My2048Game:
 
     def zusammenfuegen(self, reihe1, spalte1, reihe2, spalte2):
         self.board[reihe2][spalte2] = 2*self.board[reihe2][spalte2]
+        self.aktualisiere_score(self.board[reihe2][spalte2])
 
     def vergleiche_board(self, board1, board2):
         for reihe in range(4):
@@ -139,9 +139,8 @@ class My2048Game:
                     return False
         return True
 
-    def aktualisiere_score(self, zahl1, zahl2):
-        summe_zahlen = sum(zahl1, zahl2)
-        self.score = self.score + summe_zahlen
+    def aktualisiere_score(self, zahl1):
+        self.score = self.score + zahl1
 
     def score_ausgeben(self):
         print("Score: {} \n".format(self.score))
@@ -150,9 +149,6 @@ class My2048Game:
         ##
         pass
 
-    def pruefe_gewonnen(self):
-        ##
-        pass
 
 
 game = My2048Game()
