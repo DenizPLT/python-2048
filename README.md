@@ -14,3 +14,5 @@ After every move a new number gets placed but only if the move changed the board
 Same numbers can be merged and every merge increases the score.
 
 Game is over if no legal moves are left. 
+
+![2048_Sample3](https://user-images.githubusercontent.com/80721116/164933781-260a0159-8c40-470f-a922-1bf8b239cece.jpg)
